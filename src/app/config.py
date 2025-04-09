@@ -11,5 +11,5 @@ OPENAI_API_BASE = os.getenv("OPENAI_API_BASE")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 VECTOR_DB_PATH = "vector_db/faiss_index"
 EMBEDDING_MODEL = "text-embedding-3-large"
-CHUNK_SIZE = 500
-CHUNK_OVERLAP = 100
+CHUNK_SIZE = 300
+CHUNK_OVERLAP = 50

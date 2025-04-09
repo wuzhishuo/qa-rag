@@ -10,6 +10,8 @@ QA-RAG 是一个基于检索增强生成（Retrieval-Augmented Generation）的�
 - **多轮对话支持**：支持多轮对话历史，提供上下文相关的回答。
 - **可扩展性**：易于扩展和集成到其他应用中。
 
+![screenshot](data/screen_shot.png)
+
 ## 安装
 
 ### 前提条件

@@ -13,10 +13,12 @@ logger = logging.getLogger(__name__)
 
 def get_qa_template():
     template = """
-        你是客服助手，请根据以下内容回答用户问题，直接返回答案，不要加额外内容：
+       你是电商客服，请严格依据以下内容回答问题。如果无法从中找到答案，请说“我不确定，请联系人工客服”。
+
         ---
         {context}
         ---
+
         问题：{question}
         """
     return PromptTemplate.from_template(template)
@@ -24,8 +26,8 @@ def get_qa_template():
 
 def get_qa_chain(logging: bool = False):
     retriever = load_vector_db().as_retriever(
-        search_type="similarity_score_threshold",
-        search_kwargs={"score_threshold": 0.5},
+        search_type="similarity",
+        search_kwargs={"k": 3}
     )
     llm = ChatOpenAI(
         model_name="gpt-4",
